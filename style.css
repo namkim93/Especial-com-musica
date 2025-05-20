@@ -1,0 +1,28 @@
+body {
+  font-family: sans-serif;
+  margin: 0;
+  background-color: #fff;
+  border: 20px solid #7BC96F;
+  padding: 20px;
+  text-align: center;
+}
+
+.logo {
+  width: 200px;
+  margin-bottom: 20px;
+}
+
+#play-button {
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #7BC96F;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  z-index: 999;
+}
