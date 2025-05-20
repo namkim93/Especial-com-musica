@@ -1,40 +1,49 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carta do Oppa</title>
-    <style>
-        body {
-            background-color: #d6f5d6;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: #2e2e2e;
-            padding: 20px;
-            max-width: 600px;
-            margin: auto;
-            border: 5px solid #b2e6b2;
-            border-radius: 15px;
-        }
-        img.logo {
-            display: block;
-            margin: 0 auto;
-            max-width: 200px;
-        }
-        h1 {
-            text-align: center;
-            color: #4CAF50;
-        }
-        .carta {
-            white-space: pre-wrap;
-            font-size: 1.1em;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carta do Oppa</title>
+  <style>
+    body {
+      background-color: #d6f5d6;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #2e2e2e;
+      padding: 20px;
+      max-width: 600px;
+      margin: auto;
+      border: 5px solid #b2e6b2;
+      border-radius: 15px;
+    }
+    img.logo {
+      display: block;
+      margin: 0 auto;
+      max-width: 200px;
+    }
+    h1 {
+      text-align: center;
+      color: #4CAF50;
+    }
+    .carta {
+      white-space: pre-wrap;
+      font-size: 1.1em;
+    }
+    #botao-musica {
+      display: none;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
-    <img src="logo.png" alt="Logo Oppa Korean" class="logo">
-    <h1>Carta Especial do Oppa, o Sapinho Coreano</h1>
-    <div class="carta">
+  <img src="logo.png" alt="Logo Oppa Korean" class="logo">
+  <h1>Carta Especial do Oppa, o Sapinho Coreano</h1>
+  <div class="carta">
 🎀 Carta Especial do Oppa, o Sapinho Coreano 🐸💚
 Annyeonghaseyo! 🇰🇷
 
@@ -55,10 +64,19 @@ Vamos aproveitar juntinhos essa magia das guloseimas coreanas, com muito sabor, 
 
 Com amor,
 Oppa, o Sapinho Coreano 🐸🇰🇷
-    </div>
-    <audio autoplay muted>
-  <source src="musica.mp3" type="audio/mpeg">
-  Seu navegador não suporta o elemento de áudio.
-</audio>
+  </div>
+
+  <audio id="musica" src="musica.mp3"></audio>
+  <button id="botao-musica" onclick="document.getElementById('musica').play()">Tocar Música</button>
+
+  <script>
+    const audio = document.getElementById('musica');
+    const botao = document.getElementById('botao-musica');
+
+    audio.play().catch(() => {
+      // Se autoplay falhar, mostra botão
+      botao.style.display = 'block';
+    });
+  </script>
 </body>
 </html>
